@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:posts/helpers/colors.dart';
 import 'package:posts/helpers/names.dart';
 import 'package:posts/helpers/routes.dart';
+import 'package:posts/helpers/sizes.dart';
 import 'package:posts/helpers/spacing.dart';
 import 'package:posts/helpers/styles.dart';
 import 'package:posts/widget/background.dart';
-import 'package:posts/widget/sign_in_up_button.dart';
+import 'package:posts/widget/button_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -52,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                           textAlign: TextAlign.center,
                         ),
                       ),
-                      SingInUpButton(
+                      ButtonWidget(
                         color: ColorsHelper.primary,
                         onPressed: () {
                           Navigator.of(context)
@@ -61,7 +62,8 @@ class _HomePageState extends State<HomePage> {
                         text: 'Sign up',
                         textColor: ColorsHelper.tiles,
                       ),
-                      SingInUpButton(
+                      const SizedBox(height: Sizes.s1),
+                      ButtonWidget(
                         color: ColorsHelper.background,
                         onPressed: () {
                           Navigator.of(context)

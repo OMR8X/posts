@@ -10,3 +10,4 @@ class SpaceHelper {
     return MediaQuery.of(context).size.width - (2 * padding);
   }
 }
+

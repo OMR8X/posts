@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:posts/helpers/spacing.dart';
 import 'package:posts/helpers/styles.dart';
 
-class SingInUpButton extends StatelessWidget {
+class ButtonWidget extends StatelessWidget {
   final Color color;
   final void Function() onPressed;
   final String text;
   final Color textColor;
-  const SingInUpButton({
+  const ButtonWidget({
     super.key,
     required this.color,
     required this.onPressed,

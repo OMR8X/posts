@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:posts/helpers/colors.dart';
 import 'package:posts/helpers/names.dart';
+import 'package:posts/helpers/sizes.dart';
 import 'package:posts/helpers/spacing.dart';
 import 'package:posts/widget/background.dart';
+import 'package:posts/widget/button_widget.dart';
 import 'package:posts/widget/sign_in_up_button.dart';
 import 'package:posts/widget/text_form_field_signinup.dart';
 
@@ -75,6 +77,7 @@ class _SignUpState extends State<SignUp> {
                             return null;
                           },
                         ),
+                        const SizedBox(height: Sizes.s1),
                         TextFieldSignInUp(
                           controller: _emailController,
                           text: "Email",
@@ -85,6 +88,7 @@ class _SignUpState extends State<SignUp> {
                             return null;
                           },
                         ),
+                        const SizedBox(height: Sizes.s1),
                         TextFieldSignInUp(
                           controller: _passwordController,
                           text: "Passowrd",
@@ -96,7 +100,8 @@ class _SignUpState extends State<SignUp> {
                           },
                           isPassword: true,
                         ),
-                        SingInUpButton(
+                        const SizedBox(height: Sizes.s2),
+                        ButtonWidget(
                           color: ColorsHelper.primary,
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
