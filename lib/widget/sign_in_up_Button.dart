@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:posts/helpers/spacing.dart';
+import 'package:posts/helpers/styles.dart';
 
 class SingInUpButton extends StatelessWidget {
   final Color color;
   final void Function() onPressed;
-  final Widget child;
+  final String text;
+  final Color textColor;
   const SingInUpButton({
     super.key,
     required this.color,
     required this.onPressed,
-    required this.child,
+    required this.text,
+    required this.textColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 15.0),
+      padding:
+          const EdgeInsets.only(bottom: SpaceHelper.padding / 2), //top: 15.0),
       child: MaterialButton(
         elevation: 0.0,
         minWidth: double.infinity,
@@ -24,7 +29,10 @@ class SingInUpButton extends StatelessWidget {
         ),
         color: color,
         onPressed: onPressed,
-        child: child,
+        child: Text(
+          text,
+          style: StylesHelper().buttonTextStyle(textColor),
+        ),
       ),
     );
   }

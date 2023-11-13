@@ -6,20 +6,22 @@ import 'package:posts/widget/background.dart';
 import 'package:posts/widget/sign_in_up_button.dart';
 import 'package:posts/widget/text_form_field_signinup.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
   @override
-  State<SignIn> createState() => _SignInState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _SignInState extends State<SignIn> {
+class _SignUpState extends State<SignUp> {
   late TextEditingController _emailController;
+  late TextEditingController _nameController;
   late TextEditingController _passwordController;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   void initState() {
     _emailController = TextEditingController();
+    _nameController = TextEditingController();
     _passwordController = TextEditingController();
     super.initState();
   }
@@ -27,7 +29,7 @@ class _SignInState extends State<SignIn> {
   @override
   void dispose() {
     _emailController.dispose();
-    _passwordController.dispose();
+    _nameController.dispose();
     super.dispose();
   }
 
@@ -36,7 +38,7 @@ class _SignInState extends State<SignIn> {
     return Scaffold(
       body: Stack(
         children: [
-          const BackGround(title: NamesHelper.signInPageTitle),
+          const BackGround(title: NamesHelper.signUpPageTitle),
           Column(
             children: [
               const Spacer(),
@@ -58,9 +60,21 @@ class _SignInState extends State<SignIn> {
                   ),
                   child: Form(
                     key: _formKey,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    child: ListView(
+                      padding: const EdgeInsets.all(0.0),
+                      shrinkWrap: true,
+                      physics: const BouncingScrollPhysics(),
                       children: [
+                        TextFieldSignInUp(
+                          controller: _nameController,
+                          text: "Name",
+                          validator: (val) {
+                            if (val!.isEmpty) {
+                              return "Empty Text Field";
+                            }
+                            return null;
+                          },
+                        ),
                         TextFieldSignInUp(
                           controller: _emailController,
                           text: "Email",
@@ -73,7 +87,7 @@ class _SignInState extends State<SignIn> {
                         ),
                         TextFieldSignInUp(
                           controller: _passwordController,
-                          text: "Password",
+                          text: "Passowrd",
                           validator: (val) {
                             if (val!.isEmpty) {
                               return "Empty Text Field";
@@ -86,11 +100,11 @@ class _SignInState extends State<SignIn> {
                           color: ColorsHelper.primary,
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              // sign in code
+                              // sign up code
                               // Navigator to Feed Page
                             }
                           },
-                          text: 'Sign in',
+                          text: 'Sign up',
                           textColor: ColorsHelper.tiles,
                         ),
                       ],
