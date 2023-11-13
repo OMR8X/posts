@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:posts/helpers/colors.dart';
-import 'package:posts/helpers/names.dart';
+import 'package:posts/view/HomePage.dart';
+import 'package:posts/view/signin.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,17 +13,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-        textTheme: TextTheme()
+        textTheme: const TextTheme(),
       ),
-      home: const MyHomePage(),
+      home: const HomePage(),
+      routes: {
+        "SignIn": (context) => const SignIn(),
+      },
     );
   }
 }
 
+//------------------------------------------------------------------------------
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -37,7 +43,16 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsHelper.tiles,
-      body: const Center(child: Text(NamesHelper.signInPageTitle)),
+      body: Center(
+        child: CheckBoxWidget(
+          value: value,
+          onTap: (val) {
+            setState(() {
+              value = !value;
+            });
+          },
+        ),
+      ),
     );
   }
 }
