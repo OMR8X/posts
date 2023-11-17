@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:posts/helpers/colors.dart';
-import 'package:posts/helpers/spacing.dart';
 import 'package:posts/helpers/styles.dart';
 
 class BackGround extends StatelessWidget {

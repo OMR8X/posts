@@ -8,14 +8,14 @@ import 'package:posts/helpers/styles.dart';
 import 'package:posts/widget/background.dart';
 import 'package:posts/widget/button_widget.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class OnboardingView extends StatefulWidget {
+  const OnboardingView({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<OnboardingView> createState() => _OnboardingViewState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _OnboardingViewState extends State<OnboardingView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

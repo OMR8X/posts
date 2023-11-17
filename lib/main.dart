@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:posts/helpers/colors.dart';
-import 'package:posts/helpers/names.dart';
 import 'package:posts/helpers/routes.dart';
-import 'package:posts/view/home_page.dart';
+import 'package:posts/helpers/supabase.dart';
+import 'package:posts/view/onboarding_view.dart';
 import 'package:posts/view/signin.dart';
 import 'package:posts/view/signup.dart';
+import 'package:posts/view/splash_view.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
+void main() async {
+  await Supabase.initialize(
+    url: SupabaseHleaper.url,
+    anonKey: SupabaseHleaper.anonKey,
+    authFlowType: AuthFlowType.pkce,
+  );
   runApp(const MyApp());
 }
+
+final supabase = Supabase.instance.client;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -23,8 +31,9 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           textTheme: const TextTheme(),
         ),
-        home: const HomePage(),
+        home: const SplashView(),
         routes: {
+          RoutesHelper.onboarding: (context) => const OnboardingView(),
           RoutesHelper.signInPage: (context) => const SignIn(),
           RoutesHelper.signUpPage: (context) => const SignUp(),
         });
