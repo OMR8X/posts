@@ -5,7 +5,6 @@ import 'package:posts/helpers/sizes.dart';
 import 'package:posts/helpers/spacing.dart';
 import 'package:posts/widget/background.dart';
 import 'package:posts/widget/button_widget.dart';
-import 'package:posts/widget/sign_in_up_button.dart';
 import 'package:posts/widget/text_form_field_signinup.dart';
 
 class SignUp extends StatefulWidget {

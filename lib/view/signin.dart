@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:posts/helpers/colors.dart';
 import 'package:posts/helpers/names.dart';
+import 'package:posts/helpers/routes.dart';
 import 'package:posts/helpers/sizes.dart';
 import 'package:posts/helpers/spacing.dart';
 import 'package:posts/widget/background.dart';
 import 'package:posts/widget/button_widget.dart';
-import 'package:posts/widget/sign_in_up_button.dart';
 import 'package:posts/widget/text_form_field_signinup.dart';
 
 class SignIn extends StatefulWidget {
@@ -92,6 +92,8 @@ class _SignInState extends State<SignIn> {
                             if (_formKey.currentState!.validate()) {
                               // sign in code
                               // Navigator to Feed Page
+                              Navigator.of(context).pushNamedAndRemoveUntil(
+                                  RoutesHelper.feedPage, (route) => false);
                             }
                           },
                           text: 'Sign in',
