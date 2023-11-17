@@ -131,6 +131,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -200,6 +201,16 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.3.1"
+=======
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.18.1"
+>>>>>>> c3e372c8b9cbd5675e1d9ed05c13d94eec069c81
   lints:
     dependency: transitive
     description:

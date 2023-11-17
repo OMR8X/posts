@@ -6,11 +6,13 @@ class Post {
   //
   final String description;
   final String image;
+  final DateTime time;
   //
-  final int likes;
-  final List<Comment> comment;
+  int likes;
+  List<Comment> comment;
 
   Post({
+    required this.time,
     required this.user,
     required this.description,
     required this.image,

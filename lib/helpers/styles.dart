@@ -36,6 +36,25 @@ class StylesHelper {
       fontFamily: family,
     );
   }
+
+  TextStyle listTileTitleTextStyle() {
+    return TextStyle(
+      fontSize: 14.0,
+      fontWeight: FontWeight.w700,
+      color: Colors.black,
+      fontFamily: family,
+    );
+  }
+
+  TextStyle listTileSubtitleTextStyle([Color color = const Color(0xFF5D5B5B)]) {
+    // optinal color
+    return TextStyle(
+      fontSize: 12.0,
+      fontWeight: FontWeight.w400,
+      color: color,
+      fontFamily: family,
+    );
+  }
 }
 // 
 // 8

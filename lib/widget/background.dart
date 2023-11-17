@@ -14,6 +14,17 @@ class BackGround extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        leading: title == "Welcome!"
+            ? null
+            : IconButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: const Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.white,
+                ),
+              ),
         centerTitle: false,
         backgroundColor: ColorsHelper.primary,
         foregroundColor: Colors.white,
